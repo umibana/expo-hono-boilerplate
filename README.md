@@ -8,6 +8,6 @@ Para comunicarse con el backend se utiliza **TRPC** y **Tanstack Query**.
 
 ### Hono
 
-Para el backend se utiliza **Hono** como servido (con bun), **Drizzle** como ORM, **TRPC** para las llamadas y **better-auth** para la autenticación.
+Para el backend se utiliza **Hono** como servidor (con bun), **Drizzle** como ORM, **TRPC** para las llamadas y **better-auth** para la autenticación.
 
 
