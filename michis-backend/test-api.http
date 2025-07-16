@@ -1,0 +1,59 @@
+### Test the server
+GET http://localhost:3000
+
+### Test tRPC greeting endpoint
+POST http://localhost:3000/api/trpc/greeting
+Content-Type: application/json
+
+{}
+
+### Test tRPC getUserById endpoint
+POST http://localhost:3000/api/trpc/getUserById
+Content-Type: application/json
+
+{
+  "id": "some-user-id"
+}
+
+### Sign up a new user
+POST http://localhost:3000/api/auth/sign-up/email
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123",
+  "name": "Test User"
+}
+
+### Sign in user
+POST http://localhost:3000/api/auth/sign-in/email
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Get current user (requires authentication)
+POST http://localhost:3000/api/trpc/me
+Content-Type: application/json
+Cookie: better-auth.session_token=YOUR_SESSION_TOKEN_HERE
+
+{}
+
+### Get all users (requires authentication)
+POST http://localhost:3000/api/trpc/getUsers
+Content-Type: application/json
+Cookie: better-auth.session_token=YOUR_SESSION_TOKEN_HERE
+
+{}
+
+### Update user profile (requires authentication)
+POST http://localhost:3000/api/trpc/updateProfile
+Content-Type: application/json
+Cookie: better-auth.session_token=YOUR_SESSION_TOKEN_HERE
+
+{
+  "name": "Updated Name",
+  "image": "https://example.com/avatar.jpg"
+} 

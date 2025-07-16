@@ -1,0 +1,31 @@
+{
+  "name": "michis-backend",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "setup": "bun run docker:up && sleep 5 && bun run db:generate && bun run db:migrate"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.4.3",
+    "better-auth": "^1.2.12",
+    "dotenv": "^17.2.0",
+    "drizzle-orm": "^0.44.3",
+    "hono": "^4.8.5",
+    "pg": "^8.16.3",
+    "zod": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.4",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
