@@ -1,5 +1,6 @@
 {
   "expo": {
+    
     "name": "my-expo-app",
     "slug": "my-expo-app",
     "version": "1.0.0",
@@ -7,11 +8,14 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    
 
     "experiments": {
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "reactCanary": true
     },
 
+    "scheme": "michis",
     "plugins": [],
 
     "orientation": "portrait",

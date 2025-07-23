@@ -7,6 +7,8 @@ export const appRouter = router({
   // Public greeting endpoint
   greeting: publicProcedure.query(() => 'Hello tRPC v11!'),
 
+  secret: protectedProcedure.query(() => 'Secret message'),
+
 
   // Get current user info (protected)
   me: protectedProcedure.query(async ({ ctx }) => {
